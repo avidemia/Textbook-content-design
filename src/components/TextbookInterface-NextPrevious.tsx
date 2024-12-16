@@ -11,9 +11,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import ArticleContent from './ArticleContent'; // Import the article content
-import NavigationArrows from './NavigationArrows';
-
 const TextbookInterface = () => {
   // State variables
   const [activePanel, setActivePanel] = useState(null);
@@ -205,7 +202,31 @@ const TextbookInterface = () => {
     setTimeout(() => setShowSummaryAlert(false), 3000);
   };
 
-  const regularContent = <ArticleContent />; // Use the article content here
+  const regularContent = (
+    <>
+      <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        Chapter 1: Introduction to Artificial Intelligence
+      </h1>
+      <p className="text-gray-800 leading-relaxed mb-4">
+        Artificial Intelligence (AI) represents a transformative field in
+        computer science, focusing on creating intelligent machines that can
+        simulate human-like learning, reasoning, and problem-solving
+        capabilities. This chapter explores the fundamental concepts, historical
+        development, and core principles that form the foundation of modern AI
+        systems.
+      </p>
+      <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+        1.1 Historical Context
+      </h2>
+      <p className="text-gray-800 leading-relaxed mb-4">
+        The journey of AI began in the 1950s when pioneers like Alan Turing,
+        John McCarthy, and Marvin Minsky laid the groundwork for what would
+        become one of the most influential technological developments in human
+        history.
+      </p>
+      {/* Add more content as needed */}
+    </>
+  );
 
   const expressContent = (
     <>
@@ -543,10 +564,6 @@ const TextbookInterface = () => {
           <p className="text-green-600">Summary added successfully!</p>
         </div>
       )}
-    <NavigationArrows     showTOC={showTOC}
-    activePanel={activePanel}
-    tocWidth={tocWidth}
-    sidePanelWidth={sidePanelWidth}/>
     </div>
   );
 };
